@@ -1,2 +1,2 @@
-# univ-test
-Repository for university projects
+# univ-pull
+Repository to be pulled from
