@@ -39,6 +39,11 @@ MyDynamicArray<elem>::~MyDynamicArray() {
 }
 
 template <class elem>
+size_t MyDynamicArray<elem>::get_size(){
+    return size;
+}
+
+template <class elem>
 void MyDynamicArray<elem>::resize(){
     capacity *= size_multiply;
     elem *new_array = new elem[capacity];

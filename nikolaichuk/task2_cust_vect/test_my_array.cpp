@@ -9,9 +9,12 @@ int main(int argc, char const *argv[])
         arr.push_back(i);
     };
 
+    std::cout << "number of elements: " << arr.get_size() << std::endl;
+
     std::cout << arr[15] << std::endl;
     std::cout << arr[10] << std::endl;
     std::cout << arr[38] << std::endl;
+
     std::cout << arr[90] << std::endl;
 
     return 0;
