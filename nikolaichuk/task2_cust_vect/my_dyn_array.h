@@ -41,13 +41,14 @@ MyDynamicArray<elem>::~MyDynamicArray() {
 template <class elem>
 void MyDynamicArray<elem>::push_back(elem &item){
 // TODO: allow resize of dynamic array    
+    if (size < capacity)
     data[size] = item;
     ++size;
 }
 
 template <class elem>
 elem& MyDynamicArray<elem>::operator[] (size_t index) {
-    if (index < size) {
+    if (index < size - 1) {
         return data[index];
     }
 }
