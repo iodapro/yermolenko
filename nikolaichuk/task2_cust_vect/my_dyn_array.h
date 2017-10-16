@@ -8,7 +8,7 @@ using std::size_t;
  * 
  * Custom vector class.
  * 
- * @return template <class elem> class MyDynamicArray { private: size_t size;        // size of array in array size_t capacity;    // maximum current capacity elem* array;           // pointer to actual items in memory  const static int initial_size = 32; const static int size_multiply = 2;  void
+ * @return template <class elem> class MyDynamicArray;        // size of array in array size_t capacity;    // maximum current capacity elem* array;           // pointer to actual items in memory  const static int initial_size = 32; const static int size_multiply = 2;  void
  */
 template <class elem> 
 class MyDynamicArray {
@@ -33,7 +33,7 @@ public:
 /**
  * @brief 
  * 
- * Constructor of vector. 
+ * Constructor of vector.
  * 
  * @return template <class elem>
  */
@@ -67,7 +67,7 @@ size_t MyDynamicArray<elem>::get_size(){
 /**
  * @brief 
  * 
- * Increase size of internal array by size_multiply factor.
+ * Increase size of internal array by size_multiply factor (2 by default).
  * 
  * @return nothing
  */
