@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 {
     MyDynamicArray<int> arr;
 
-    for(int i;i<40;i++){
+    for(int i=0;i<40;i++){
         arr.push_back(i);
     };
 
