@@ -2,20 +2,21 @@
 
 using namespace std;
 
+template <typename T>
 class vectar
 {
 private:
-	int *ptr;
+	T *ptr;
 	int size;
 	int capasity;
 public:
 	vectar(): size(0), capasity(5)
 		{
-		ptr = new int[capasity];
+		ptr = new T[capasity];
 		}
 	vectar(int razm): size(0), capasity(razm)
 		{
-		ptr = new int[capasity];
+		ptr = new T[capasity];
 		}
 	~vectar()
 		{
@@ -25,7 +26,7 @@ public:
 		{
 		return size;
 		}
-	int& operator[] (int num)
+	T& operator[] (int num)
 		{
 		if (num>size) 
 			{ 
@@ -38,10 +39,13 @@ public:
 	void print ()
 		{
 		for (int i=0; i < size; ++i)
-			cout<<(*this)[i]<<" ";
+			{
+			(*this)[i].print();
+			cout<<" ";
+			}
 		cout << endl;
 		}
-	void pushback (int elem)
+	void pushback (T elem)
 		{
 		if (size<capasity)
 			{
@@ -50,7 +54,7 @@ public:
 			}
 		else
 			{
-			int *copa = new int[capasity+1];
+			T *copa = new T[capasity+1];
 			for (int i=0; i<size; ++i)
 				copa[i] = (*this)[i];
 			copa[size] = elem;
@@ -65,14 +69,33 @@ public:
 	
 };
 
+class artest
+{
+private:
+	int art;
+public:
+	artest(): art(12)
+	{}
+	artest(int a): art(a)
+	{}
+	~artest()
+	{}
+	void print()
+	{
+	cout << art;
+	}
+
+};
+
 int main()
 {
-	vectar v(2);
-	v.pushback(8);
+	artest ara(145);
+	vectar<artest> v(2);
+	v.pushback(ara);
 	cout << "size " << v.getsize() << endl;
-	v.pushback(7);
+	v.pushback(ara);
 	v.print();
-	v.pushback(145);
+	v.pushback(ara);
 	cout << "size " << v.getsize() << endl;
 	v.print();
 return 0;
