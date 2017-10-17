@@ -50,18 +50,16 @@ public:
 			}
 		else
 			{
-			vectar copa(capasity+1);
+			int *copa = new int[capasity+1];
 			for (int i=0; i<size; ++i)
-				copa.pushback( (*this)[i] );
-			copa.pushback(elem);
-			copa.print();
-			cout << endl;
+				copa[i] = (*this)[i];
+			copa[size] = elem;
 			delete [] ptr;
-			ptr = copa.ptr;
+			ptr = copa;
 //			cout << copa.ptr << " " << ptr << endl;
 			++capasity;
 			++size;
-			(*this).print();
+//			(*this).print();
 			}
 		}
 	
