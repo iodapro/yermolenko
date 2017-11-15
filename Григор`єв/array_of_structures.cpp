@@ -1,4 +1,3 @@
-
 #include "stdafx.h"
 
 
@@ -13,17 +12,27 @@ struct MyStruct {
 	int status;
 };
 
+/*!
+\brief Output results
+\param [in] n
+\param [in] obj[]
+
+Outputting our result into the command line (using "cout")
+
+*/
 void print(const MyStruct obj[], int n)
 {
 
 	fot(int j = 0; j<n; j++)
 		cout << "Name:\t" << obj[j].name << "\t Mark: \t" << obj[j].mark << "\t Status \t" << obj[j].status << endl;
-}
+} 
 
 /*!
-\brief Rezul`tat zalikovoji sesiji
+\brief Result of the session
+\param [in] n number of students
+\param [in] n number of students
 
-Rezul`tat zdachi studentamy 2 kursu magistrarury zaliku z predmetu "Suchasni hompjuterni tehnologiji u fizytsi jadra"
+The result of the 2nd year undergraduate student's posting from the subject "Modern computer technologies in nuclear physics"
 
 */
 
