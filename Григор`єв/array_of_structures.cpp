@@ -1,8 +1,4 @@
-/*!
-	\brief Результат залікової сесії
-	
-	Результат здачі студентами 2 курсу магістратури заліку з предмету "Сучасні комп*ютерні технології у фізиці ядра"
-*/
+
 #include "stdafx.h"
 
 
@@ -23,6 +19,13 @@ void print(const MyStruct obj[], int n)
 	fot(int j = 0; j<n; j++)
 		cout << "Name:\t" << obj[j].name << "\t Mark: \t" << obj[j].mark << "\t Status \t" << obj[j].status << endl;
 }
+
+/*!
+\brief Rezul`tat zalikovoji sesiji
+
+Rezul`tat zdachi studentamy 2 kursu magistrarury zaliku z predmetu "Suchasni hompjuterni tehnologiji u fizytsi jadra"
+
+*/
 
 int main()
 {
