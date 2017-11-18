@@ -14,8 +14,18 @@ map<string, int> getNumberOfWords(string file)
   ifstream inputFile;
 
   inputFile.open(file);
-  while(inputFile >> word)
+  while(inputFile >> word){
+    if((word.at(0) == '(' && word.at(word.size() - 1) == ')') || (word.at(0) == '"' && word.at(word.size() - 1) == '"') || (word.at(0) == '[' && word.at(word.size() - 1) == ']'))
+      {
+	word.erase(0, 1);
+	word.resize(word.size() - 1);
+      }
+    else if(word.at(word.size() - 1) == '.' || word.at(word.size() - 1) == ',' || word.at(word.size() - 1) == ')' || word.at(word.size() - 1) == '"' || word.at(word.size() - 1) == ':' || word.at(word.size() - 1) == ';' || word.at(word.size() - 1) == '!' || word.at(word.size() - 1) == '?')
+      word.resize(word.size() - 1);
+    else if(word.at(0) == '(' || word.at(0) == '"')
+      word.erase(0, 1);
     wordsFromText[word]++;
+  }
   inputFile.close();
 
   return wordsFromText;
